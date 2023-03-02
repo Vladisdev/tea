@@ -1,0 +1,12 @@
+product-card {
+  height: 648px;
+}
+
+.product {
+  height: 100%;
+  max-width: 640px;
+}
+
+.card__price {
+  top: 7px;
+}

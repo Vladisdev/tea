@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+app-main,
+app-products,
+app-order {
+  flex: 1 1 auto;
+}
+
+.banner__page {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1320px;
+  height: 640px;
+}
+
+.banner__page-one {
+  background: url('./assets/images/image 1.png');
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: '';
+}
+
+h5 {
+  font-weight: 700;
+}
+
+.accordion .ui-accordion-header {
+  position: relative;
+}
+
+.accordion .ui-accordion-header-icon {
+  content: '';
+  position: absolute;
+  top: 30px;
+  right: 27px;
+  display: inline-block;
+  width: 20px;
+  height: 13px;
+  background: url(./assets/images/vector-up.png) 50% 50% no-repeat;
+}
+
+.accordion .ui-accordion-header-active .ui-accordion-header-icon {
+  background-image: url(./assets/images/vector-down.png);
+}
+
+.hvr-underline-from-center:before {
+  background: #f8f9fa;
+  height: 2px;
+}
+
+/* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+  padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+  top: 0;
+  bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+  padding: 0;
+}
+
+/*
+for zoom animation
+*/
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+.banner__page-head {
+  max-width: 525px;
+}
+
+.banner__page-three .banner__page-head {
+  max-width: 500px;
+}
+
+.accordion {
+  max-width: 874px;
+}
+
+.form__container {
+  max-width: 656px;
+}
+
+@media screen and (max-width: 1400px) {
+  div.banner__page {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div.banner__page-two {
+    background-position: unset;
+  }
+}

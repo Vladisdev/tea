@@ -1,0 +1,17 @@
+<div class='product d-flex flex-column align-items-center m-auto'>
+  <div class='card h-100'>
+    <img src='{{product.image}}' class='card-img-top ' alt='Детокс чай лайм'>
+    <div class='card-body d-flex align-content-between flex-wrap'>
+      <h5 class='card-title'>{{product.title}}</h5>
+      <p class='card-text'>{{product.description}}</p>
+      <div class='cart-footer w-100 position-relative'>
+        <a [routerLink]="['/product', product.id]"
+           class='btn btn-primary px-4 hvr-underline-from-center me-3'>Подробнее</a>
+        <a
+          [routerLink]="['/order']" [queryParams]='{product: product.title}'
+          class='btn btn-primary px-4 hvr-underline-from-center me-3'>Купить</a>
+        <span class='card__price position-absolute end-0 me-4'>{{product.price | price}}</span>
+      </div>
+    </div>
+  </div>
+</div>

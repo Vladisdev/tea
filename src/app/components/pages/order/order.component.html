@@ -1,0 +1,89 @@
+<section class='mt-5 order'>
+  <div class='container'>
+    <div class='wrap' *ngIf='!successOrderReq'>
+      <h2 class='mb-5 text-center fw-bold'>Сделать заказ</h2>
+      <form action='' [formGroup]='orderForm' novalidate id='order-form'
+            class='wow animate__bounceInLeft animate__delay-1s'>
+        <div class='form__container mx-auto'>
+          <div class='row g-4 mb-3'>
+            <div class='col-sm-4'>
+              <label for='inputName' class='form-label'>Имя</label>
+              <input type='text' class='form-control' formControlName='name' id='inputName'>
+              <div class='error' *ngIf='name?.invalid
+                    && (name?.touched || name?.dirty)'>
+                <div class='text-danger' *ngIf="name?.errors?.['required']">Поле обязательно для заполнения</div>
+                <div class='text-danger' *ngIf="name?.errors?.['nameOrLastName']">Данные введены некорректно</div>
+              </div>
+            </div>
+            <div class='col-sm-4'>
+              <label for='inputFemale' class='form-label'>Фамилия</label>
+              <input type='text' class='form-control' formControlName='last_name' id='inputFemale'>
+              <div class='error' *ngIf='lastName?.invalid
+                    && (lastName?.touched || lastName?.dirty)'>
+                <div class='text-danger' *ngIf="lastName?.errors?.['required']">Поле обязательно для заполнения</div>
+                <div class='text-danger' *ngIf="lastName?.errors?.['nameOrLastName']">Данные введены некорректно</div>
+              </div>
+            </div>
+            <div class='col-sm-4'>
+              <label for='inputTel' class='form-label'>Телефон</label>
+              <input type='text' class='form-control' formControlName='phone' id='inputTel'>
+              <div class='error' *ngIf='phone?.invalid
+                    && (phone?.touched || phone?.dirty)'>
+                <div class='text-danger' *ngIf="phone?.errors?.['required']">Поле обязательно для заполнения</div>
+                <div class='text-danger' *ngIf="phone?.errors?.['password']">Данные введены некорректно</div>
+              </div>
+            </div>
+          </div>
+          <div class='row g-4 mb-3'>
+            <div class='col-sm'>
+              <label for='inputProduct'>Товар</label>
+              <input type='text' readonly='readonly' formControlName='product' class='form-control' id='inputProduct'>
+            </div>
+            <div class='col-sm'>
+              <label for='inputAddress' class='form-label'>Адрес</label>
+              <input type='text' class='form-control' formControlName='address' id='inputAddress'>
+              <div class='error' *ngIf='address?.invalid
+                    && (address?.touched || address?.dirty)'>
+                <div class='text-danger' *ngIf="address?.errors?.['required']">Поле обязательно для заполнения</div>
+                <div class='text-danger' *ngIf="address?.errors?.['address']">Данные введены некорректно</div>
+              </div>
+            </div>
+          </div>
+          <div class='row g-4 mb-3'>
+            <div class='col-sm'>
+              <label for='inputCountry' class='form-label'>Страна</label>
+              <input type='text' class='form-control' formControlName='country' id='inputCountry'>
+              <div class='error' *ngIf='country?.invalid
+                    && (country?.touched || country?.dirty)'>
+                <div class='text-danger' *ngIf="country?.errors?.['required']">Поле обязательно для заполнения</div>
+                <div class='text-danger' *ngIf="country?.errors?.['country']">Данные введены некорректно</div>
+              </div>
+            </div>
+            <div class='col-sm'>
+              <label for='inputIndex' class='form-label'>Индекс</label>
+              <input type='text' class='form-control input-number' formControlName='zip' id='inputIndex'>
+              <div class='error text-danger' *ngIf='zip?.invalid
+                    && (zip?.touched || zip?.dirty)'>
+                <div *ngIf='zip?.errors?.["required"]'>Поле обязательно для заполнения</div>
+                <div *ngIf='zip?.errors?.["minLength"]'>Поле должно содержать не менее 6 символов</div>
+              </div>
+            </div>
+          </div>
+          <div class='col-12'>
+            <label for='inputComment'>Комментарий к заказу</label>
+            <input type='text' class='form-control' id='inputComment'>
+          </div>
+          <div class='col mt-4'>
+            <button id='orderButton' type='submit' (click)='createOrder()' class='btn btn-primary px-4 hvr-glow'>
+              Отправить
+            </button>
+            <span *ngIf='showError' class='form-error text-danger ms-3'>Произошла ошибка. Проверьте введенные данные и попробуйте ещё раз.</span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf='successOrderReq' class='success d-flex justify-content-center align-items-center' id='order-success'>
+        Спасибо за заказ!
+    </div>
+  </div>
+</section>
