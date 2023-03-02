@@ -28,7 +28,7 @@ app-order {
 }
 
 .banner__page-one {
-  background: url('./assets/images/image 1.png');
+  background: url('/assets/images/image 1.png');
 }
 
 .slick-prev:before,

@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { CustomValidators } from '../../../common/custom-validators';
+import { CustomValidators } from '../../shared/validators/custom-validators';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ProductsService } from '../../../services/products.service';
+import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from '../../shared/services/products.service';
 
 @Component({
   selector: 'app-order',

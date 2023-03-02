@@ -1,8 +1,8 @@
 import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ProductType } from '../types/product.type';
-import { environment } from '../../environments/environment';
+import { ProductType } from '../../../types/product.type';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class ProductsService {

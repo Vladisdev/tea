@@ -2,8 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 
-declare var $: any;
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
