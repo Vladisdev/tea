@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,30 +6,8 @@ import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
-export class MainComponent implements OnInit, OnDestroy {
+export class MainComponent {
   public showPopup: boolean = false;
-  private observable: Observable<boolean>;
-  private subscription: Subscription | null = null;
 
-  constructor(config: NgbAccordionConfig) {
-    this.observable = new Observable<boolean>(observer => {
-      setTimeout(() => {
-        observer.next(true);
-      }, 10000);
-    });
-
-    config.closeOthers = true;
-  }
-
-  ngOnInit(): void {
-    this.subscription = this.observable.subscribe(param => {
-      if (param) {
-        this.showPopup = true;
-      }
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.subscription?.unsubscribe();
-  }
+  constructor(config: NgbAccordionConfig) {}
 }

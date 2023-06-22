@@ -1,14 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './views/layout.component';
+import { LoginComponent } from './views/login/login.component';
+import { SignupComponent } from './views/signup/signup.component';
 
 let routes: Routes = [
+  {
+    path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
   {
     path: '',
     component: LayoutComponent,
     children: [
       {
-        path: '',
+        path: 'main',
         loadChildren: () =>
           import('./views/main/main.module').then(m => m.MainModule),
       },

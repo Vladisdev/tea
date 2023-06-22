@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProductType } from '../../../../types/product.type';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductType } from '../../../../types/product.type';
 import { ProductsService } from '../../../shared/services/products.service';
 
 @Component({
@@ -10,6 +10,8 @@ import { ProductsService } from '../../../shared/services/products.service';
 })
 export class ProductComponent implements OnInit {
   @Input() product!: ProductType;
+
+  routePath = this.router.url;
 
   constructor(
     private activatedRoute: ActivatedRoute,

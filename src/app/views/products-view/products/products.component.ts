@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../../shared/services/products.service';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProductType } from '../../../../types/product.type';
-import { Router } from '@angular/router';
-
-// import { ProductsService } from '../../../services/products.service';
+import { ProductsService } from '../../../shared/services/products.service';
 
 @Component({
   selector: 'products',
